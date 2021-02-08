@@ -25,7 +25,7 @@ namespace BigDataAssigment.Api.Caching
         {
             var cacheEntryOptions = new MemoryCacheEntryOptions()
                        .SetSize(1)
-                       .SetSlidingExpiration(TimeSpan.FromSeconds(60));
+                       .SetSlidingExpiration(TimeSpan.FromMinutes(60));
             if (_appMemoryCache.Cache.Count > Constants.Constants.CacheSize) {
                 _appMemoryCache.Cache.Compact(10);
             }

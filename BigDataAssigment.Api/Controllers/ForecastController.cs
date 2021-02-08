@@ -54,7 +54,7 @@ namespace BigDataAssigment.Api.Controllers
             ILogger logger = _loggerFactory.CreateLogger("GetForecast");
             try
             {
-                var forecastsEnquiriedToday = await _forecastRepository.GetByDate(DateTime.Today.AddDays(-1)).ConfigureAwait(false);
+                var forecastsEnquiriedToday = await _forecastRepository.GetByDate(DateTime.Today).ConfigureAwait(false);
                 return new ObjectResult(forecastsEnquiriedToday.ToList());
             }
             catch (Exception ex)
